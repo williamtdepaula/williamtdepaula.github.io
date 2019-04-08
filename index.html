@@ -89,7 +89,7 @@
                 let linkArray = link.split('');
                 const id = link.substring(linkArray.indexOf('=')+1, 9999);
                 
-                document.querySelector('.wrapper').innerHTML = "<iframe id='myIframe' src='https://player.vimeo.com/video/"+ id +"?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=1' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+                document.querySelector('.wrapper').innerHTML = "<iframe id='myIframe' src='https://player.vimeo.com/video/"+ id +"?background=true&controls=false&autoplay=1&loop=1&title=0&byline=0&portrait=1' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
             }
             
         </script>
