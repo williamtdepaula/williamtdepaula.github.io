@@ -65,7 +65,7 @@
             }
         </style>
         <script>
-            var urlVideo;
+            var urlVideo = '327099174';
             function videoSize() {
               var $windowHeight = $(window).height();
               var $videoHeight = $(".video").outerHeight();
@@ -84,7 +84,7 @@
                 let linkArray = link.split('');
                 let id = link.substring(linkArray.indexOf('=')+1, 9999);
                 
-                return id
+                urlVideo = id
             }
 
             $(window).on('load resize',function(){
@@ -95,11 +95,14 @@
       
         </script>
     </head>
-     <div class="fullscreen">
-      <div class="video">
-        <div class="wrapper">
-            <iframe src="https://player.vimeo.com/video/"+idVideo()+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <body onLoad="idVideo()">
+        alert(urlVideo)
+         <div class="fullscreen">
+          <div class="video">
+            <div class="wrapper">
+                <iframe src="https://player.vimeo.com/video/"+urlVideo+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+    </body>
 </html>
