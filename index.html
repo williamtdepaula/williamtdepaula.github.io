@@ -84,8 +84,6 @@
                 let linkArray = link.split('');
                 let id = link.substring(linkArray.indexOf('=')+1, 9999);
                 
-                debugger;
-                
                 return id
                 
                 /*var loc = window.location.toString(),
@@ -100,6 +98,14 @@
               videoSize();
                
             });
+            
+            function getVideo() {
+                let link = location.toString();
+                let linkArray = link.split('');
+                const id = link.substring(linkArray.indexOf('=')+1, 9999);
+                
+                document.querySelector('.wrapper').innerHTML = "<iframe id='myIframe' src='https://player.vimeo.com/video/"+ id +"?autoplay=1&loop=1&title=0&byline=0&portrait=1' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
+            }
             
             /*function webViewBridge() {
               var vid = 324146324;//getParameterByName('vid');
@@ -123,11 +129,11 @@
             webViewBridge();*/
         </script>
     </head>
-    <body>
+    <body onload="getVideo()">
         <div class="fullscreen">
           <div class="video">
             <div class="wrapper">
-                <iframe id='myIframe' src="https://player.vimeo.com/video/"+idVideo()+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <!-- <iframe id='myIframe' src="https://player.vimeo.com/video/"+idVideo()+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
             </div>
           </div>
         </div>
