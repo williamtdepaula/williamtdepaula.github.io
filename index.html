@@ -65,7 +65,7 @@
             }
         </style>
         <script>
-            /*var urlVideo;
+            var urlVideo;
             function videoSize() {
               var $windowHeight = $(window).height();
               var $videoHeight = $(".video").outerHeight();
@@ -90,68 +90,16 @@
             $(window).on('load resize',function(){
               videoSize();
                
-            });*/
+            });
             
-            function webViewBridge() {
-              var vid = getParameterByName('v');
-              if (!vid) {
-                window.postMessage('No `vid` parameter found, not loading Vimeo iframe');
-                return;
-              }
-              // Generate iframe based on `vid` parameter
-              var iframe;
-              iframe = document.createElement('iframe');
-              iframe.src =
-                'https://player.vimeo.com/video/' + vid + '?autoplay=1&loop=1&title=0&byline=0&portrait=1';
-              iframe.width = '500';
-              iframe.height = '281';
-              iframe.frameBorder = '0';
-              iframe.webkitallowfullscreen = true;
-              iframe.allowfullscreen = true;
-              document.body.appendChild(iframe);
-              var player = $f(iframe);
-              // Bind player events to `sendEvent` function so that they are passed
-              // through the bridge.
-              player.addEvent('ready', function() {
-                // Ideally we could just iterate over event names and add the sendEvent
-                // handler to each of them, however that doesn't work because sendEvent
-                // ends up just being called with whatever was the last event in the array.
-                player.addEvent('play', function(data) {
-                  sendEvent('play', data);
-                });
-                player.addEvent('playProgress', function(data) {
-                  sendEvent('playProgress', data);
-                });
-                player.addEvent('pause', function(data) {
-                  sendEvent('pause', data);
-                });
-                player.addEvent('finish', function(data) {
-                  sendEvent('finish', data);
-                });
-                sendEvent('ready');
-              });
-
-              player.api(message, function(data) {
-                sendEvent(message, data);
-              });
-              function sendEvent(evt, data) {
-                // Passes events through the bridge
-                var payload = {
-                  name: evt,
-                  data: data
-                };
-                window.postMessage(JSON.stringify(payload));
-              }
-            }
-            
-            webViewBridge();
+      
         </script>
     </head>
-     <!--<div class="fullscreen">
+     <div class="fullscreen">
       <div class="video">
         <div class="wrapper">
-            <iframe src="//player.vimeo.com/video/"+idVideo+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/"+idVideo+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
       </div>
-    </div>-->
+    </div>
 </html>
