@@ -85,9 +85,9 @@
             function idVideo() {
                 let link = location.toString();
                 let linkArray = link.split('');
-                alert(getParameterByName('v')+"teste")
                 let id = link.substring(linkArray.indexOf('=')+1, 9999);
-                return id;
+                
+                urlVideo = id
             }
 
             $(window).on('load resize',function(){
@@ -97,9 +97,10 @@
         </script>
     </head>
      <div onload="idVideo();" class="fullscreen">
+         <script>alert(urlVideo)</script>
       <div class="video">
         <div class="wrapper">
-            <iframe src="//player.vimeo.com/video/"+idVideo()+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe src="//player.vimeo.com/video/"+urlVideo+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
       </div>
     </div>
