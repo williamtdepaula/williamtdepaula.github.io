@@ -84,6 +84,15 @@
                 let linkArray = link.split('');
                 let id = link.substring(linkArray.indexOf('=')+1, 9999);
                 
+                debugger;
+                
+                return id
+                
+                /*var loc = window.location.toString(),
+                params = loc.split('?')[1],
+                iframe = document.getElementById('myIframe');
+
+                iframe.src = iframe.src + '?' + params;*/
                 
             }
 
@@ -92,7 +101,7 @@
                
             });
             
-            function webViewBridge() {
+            /*function webViewBridge() {
               var vid = 324146324;//getParameterByName('vid');
               if (!vid) {
                 window.postMessage('No `vid` parameter found, not loading Vimeo iframe');
@@ -111,17 +120,16 @@
               document.body.appendChild(iframe);
             }
             
-            webViewBridge();
+            webViewBridge();*/
         </script>
     </head>
-    <body></body>
-    <!--<body onload="idVideo()">
+    <body>
         <div class="fullscreen">
           <div class="video">
             <div class="wrapper">
-                <iframe src="https://player.vimeo.com/video/"+urlVideo+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <iframe id='myIframe' src="https://player.vimeo.com/video/"+idVideo()+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
           </div>
         </div>
-    </body>-->
+    </body>
 </html>
