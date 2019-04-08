@@ -83,8 +83,8 @@
                 let link = location.toString();
                 let linkArray = link.split('');
                 let id = link.substring(linkArray.indexOf('=')+1, 9999);
-                
-                urlVideo = id
+                alert(id+' teste");
+                urlVideo = id;
             }
 
             $(window).on('load resize',function(){
@@ -96,7 +96,6 @@
         </script>
     </head>
     <body onload="idVideo()">
-        <script>alert(urlVideo)</script>
          <div class="fullscreen">
           <div class="video">
             <div class="wrapper">
