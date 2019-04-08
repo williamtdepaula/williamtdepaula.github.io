@@ -79,21 +79,6 @@
                 };
             }
             
-            function idVideo() {
-                let link = location.toString();
-                let linkArray = link.split('');
-                let id = link.substring(linkArray.indexOf('=')+1, 9999);
-                
-                return id
-                
-                /*var loc = window.location.toString(),
-                params = loc.split('?')[1],
-                iframe = document.getElementById('myIframe');
-
-                iframe.src = iframe.src + '?' + params;*/
-                
-            }
-
             $(window).on('load resize',function(){
               videoSize();
                
@@ -107,33 +92,12 @@
                 document.querySelector('.wrapper').innerHTML = "<iframe id='myIframe' src='https://player.vimeo.com/video/"+ id +"?autoplay=1&loop=1&title=0&byline=0&portrait=1' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
             }
             
-            /*function webViewBridge() {
-              var vid = 324146324;//getParameterByName('vid');
-              if (!vid) {
-                window.postMessage('No `vid` parameter found, not loading Vimeo iframe');
-                return;
-              }
-              // Generate iframe based on `vid` parameter
-              var iframe;
-              iframe = document.createElement('iframe');
-              iframe.src =
-                'https://player.vimeo.com/video/' + vid + '?autoplay=1&loop=1&title=0&byline=0&portrait=1' ;
-              iframe.width = '100%';
-              iframe.height = '98%';
-              iframe.frameBorder = '0';
-              iframe.webkitallowfullscreen = true;
-              iframe.allowfullscreen = true;
-              document.body.appendChild(iframe);
-            }
-            
-            webViewBridge();*/
         </script>
     </head>
     <body onload="getVideo()">
         <div class="fullscreen">
           <div class="video">
             <div class="wrapper">
-                <!-- <iframe id='myIframe' src="https://player.vimeo.com/video/"+idVideo()+"?autoplay=1&loop=1&title=0&byline=0&portrait=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
             </div>
           </div>
         </div>
