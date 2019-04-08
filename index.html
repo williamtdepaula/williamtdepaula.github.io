@@ -85,7 +85,7 @@
             function idVideo() {
                 let link = location.toString();
                 let linkArray = link.split('');
-                let id = link.substring(linkArray.indexOf('/')+1, 9999);
+                let id = link.substring(linkArray.indexOf('=')+1, 9999);
                 alert(id);
                 return id;
             }
